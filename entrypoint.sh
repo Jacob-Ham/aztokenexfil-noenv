@@ -17,8 +17,8 @@ echo "Starting token collection from $IDENTITY_ENDPOINT..."
 
 for R in "${RESOURCES[@]}"; do
 
-    RESPONSE=$(curl -s -H "X-IDENTITY-HEADER: $IDENTITY_HEADER" \
-        "$IDENTITY_ENDPOINT?api-version=2019-08-01&resource=$R")
+    RESPONSE=$(curl -s -H "Metadata:true" \
+        "$IDENTITY_ENDPOINT?api-version=2021-12-13&resource=$R")
 
 
     TOKEN=$(echo "$RESPONSE" | jq -r '.access_token // .message')
