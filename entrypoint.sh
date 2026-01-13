@@ -1,6 +1,7 @@
 #!/bin/sh
 
-WEBHOOK="https://webhook.site/b4b33967-c95c-4510-bda7-0110af22aff2"
+WEBHOOK_URL="https://webhook.site/b4b33967-c95c-4510-bda7-0110af22aff2"
+
 
 RESOURCES=(
     "https://management.azure.com/"
